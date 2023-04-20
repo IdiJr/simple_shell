@@ -187,7 +187,7 @@ int cd_shell(data_shell *datash);
 /* get_builtIn */
 int (*get_builtIn(char *cmd))(data_shell *datash);
 
-/* exit_h.c */
+/* exit_sh.c */
 int exit_shell(data_shell *datash);
 
 /* covert.c */
