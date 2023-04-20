@@ -223,7 +223,7 @@ void help_general(void);
 void help_exit(void);
 
 /* helper_func1.c */
-void help(void);
+void _help(void);
 void help_alias(void);
 void help_cd(void);
 
