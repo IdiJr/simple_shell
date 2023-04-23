@@ -7,35 +7,35 @@
 ### Invocation
 Usage: **hsh** 
 hsh is started with the standard input connected to the terminal. To start, compile all .c located in this repository by using this command:
-`
+```
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 ./hsh
-`
+```
 **hsh** is allowed to be invoked interactively and non-interactively. If **hsh** is invoked with standard input not connected to a terminal, it reads and executes received commands in order.
 
 Example:
-`
+```
 $ echo "echo 'Cisfun'" | ./hsh
 'Cisfun'
 $
-`
+```
 
 When **hsh** is invoked with standard input connected to a terminal (determined by isatty(3), the interactive mode is opened. **hsh** Will be using the following prompt `$ `.
 
 Example:
-`
+```
 $./hsh
 $ 
-`
+```
 
 If a command line argument is invoked, **hsh** will take that first argument as a file from which to read commands.
 
 Example:
-`
+```
 $ cat trial
 echo 'Cisfun'
 $
-`
+```
 
 ### Environment
 Upon invocation, **hsh** receives and copies the environment of the parent process in which it was executed. This environment is an array of *name-value* strings describing variables in the format *NAME=VALUE*. A few key environmental variables are:
@@ -44,38 +44,38 @@ Upon invocation, **hsh** receives and copies the environment of the parent proce
 The home directory of the current user and the default directory argument for the **cd** builtin command.
 
 Example:
-`
+```
 $ echo "echo $HOME" | ./hsh
 /root 
-`
+```
 NB: $HOME during the test was the root folder
 
 #### PWD
 The current working directory as set by the **cd** command.
 
 Example:
-`
+```
 $ echo "echo $PWD" | ./hsh
 /root/simple_shell
-`
+```
 
 #### OLDPWD
 The previous working directory as set by the **cd** command.
 
 Example:
-`
+```
 $ echo "echo $OLDPWD" | ./hsh
 /root
-`
+```
 
 #### PATH
 A colon-separated list of directories in which the shell looks for commands. A null directory name in the path (represented by any of two adjacent colons, an initial colon, or a trailing colon) indicates the current directory.
 
 Example:
-`
+```
 $ echo "echo $PATH" | ./hsh
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu20.04LTS_2004.5.11.0_x64__79rhkp1fndgsc:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/MinGW/bin:/mnt/c/Users/idial/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/idial/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin
-`
+```
 
 ### Command Execution
 When a command is inputed into **hsh**, it tokenizes it into words using `" "` as a delimiter. It then considers the first word as a command and subsequent words as arguments to that command. **hsh** then does the following:
@@ -92,11 +92,11 @@ All builtins return zero on success and one or two on incorrect usage (indicated
 **hsh** ignores the keyboard input ctrl+c in the interactive mode. End-Of-File ctrl+d will exit the program.
 
 User hits ctrl+c in the first command, and ctrl+d in the foutrh command.
-`
+```
 $ ./hsh
 $ ^C
 $ 
-`
+```
 
 ### Variable Replacement
 **hsh** interprets the `$` character for variable replacement.
@@ -105,37 +105,37 @@ $
 `ENV_VARIABLE` is substituted with its value.
 
 Example:
-`
+```
 $ echo "echo $PWD" | ./hsh
 /root/simple_shell
-`
+```
 
 #### $?
 `?` is substitued with the return value of the last program executed.
 
 Example:
-`
+```
 $ echo "echo $?" | ./hsh
 0
-`
+```
 
 #### $$
 The second `$` is substitued with the current process ID.
 
 Example:
-`
+```
 $ echo "echo $$" | ./hsh
 9
-`
+```
 
 ### Comments
 **hsh** ignores all words and characters that begins with `#` character on a line.
 
 Example:
-`
+```
 $ echo "echo 'Cisfun' #this will be ignored!" | ./hsh
 'Cisfun'
-`
+```
 
 ### Operators
 **hsh** specially interprets the following operator characters:
@@ -144,11 +144,11 @@ $ echo "echo 'Cisfun' #this will be ignored!" | ./hsh
 Commands separated by a `;` are executed sequentially.
 
 Example:
-`
+```
 $ echo "echo 'hello' ; echo 'world'" | ./hsh
 'hello'
 'world'
-`
+```
 
 #### && - AND logical operator
 `command1 && command2`: `command2` is executed if, and only if, `command1` returns an exit status of zero.
