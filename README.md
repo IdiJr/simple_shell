@@ -34,8 +34,6 @@ Example:
 ```
 $ cat trial
 echo 'Cisfun'
-$ ./hsh trial
-'Cisfun'
 $
 ```
 
@@ -127,7 +125,7 @@ The second `$` is substitued with the current process ID.
 Example:
 ```
 $ echo "echo $$" | ./hsh
-551
+9
 ```
 
 ### Comments
