@@ -50,7 +50,7 @@ typedef struct data
 typedef struct sep_lists
 {
 	char separator;
-	struct sep_list_s *next;
+	struct sep_lists *next;
 } seplist;
 
 /**
@@ -62,7 +62,7 @@ typedef struct sep_lists
 typedef struct line_lists
 {
 	char *line;
-	struct line_list_s *next;
+	struct line_lists *next;
 } linelist;
 
 /**
@@ -78,7 +78,7 @@ typedef struct var_list_s
 	int len_var;
 	char *val;
 	int len_val;
-	struct r_var_list *next;
+	struct var_list_s *next;
 } var_list;
 
 /**
@@ -140,15 +140,15 @@ char *read_line(int *i_eof);
 
 /* split_func.c */
 char *swap_char(char *input, int bool);
-void add_nodes(sep_list **head_s, line_list **head_l, char *input);
-void go_next(sep_list **list_s, line_list **list_l, data_shell *datash);
+void add_nodes(seplist **head_s, linelist **head_l, char *input);
+void go_next(seplist **list_s, linelist **list_l, data_shell *datash);
 int split_commands(data_shell *datash, char *input);
 char **split_line(char *input);
 
 /* var_handler.c */
-void check_env(r_var **h, char *in, data_shell *data);
-int check_vars(r_var **h, char *in, char *st, data_shell *data);
-char *replaced_input(r_var **head, char *input, char *new_input, int nlen);
+void check_env(var_list **h, char *in, data_shell *data);
+int check_vars(var_list **h, char *in, char *st, data_shell *data);
+char *replaced_input(var_list **head, char *input, char *new_input, int nlen);
 char *rep_var(char *input, data_shell *datash);
 
 /* get_line.c */

@@ -145,7 +145,7 @@ int split_commands(data_shell *datash, char *input)
 	while (list_l != NULL)
 	{
 		datash->input = list_l->line;
-		datash->args = split_line(datash->input);
+		datash->agc = split_line(datash->input);
 		loop = exec_line(datash);
 		free(datash->agc);
 

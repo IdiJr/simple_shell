@@ -66,7 +66,7 @@ linelist *add_line_node_end(linelist **head, char *line)
 {
 	linelist *new, *temp;
 
-	new = malloc(sizeof(line_list));
+	new = malloc(sizeof(linelist));
 	if (new == NULL)
 		return (NULL);
 
