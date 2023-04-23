@@ -163,7 +163,7 @@ int is_cdir(char *path, int *i);
 char *_which(char *cmd, char **_environ);
 int is_executable(data_shell *datash);
 int check_error_cmd(char *dir, data_shell *datash);
-int cmd_exec(data_shell *datash);
+int exec_cmd(data_shell *datash);
 
 /* env_handler.c */
 char *_getenv(const char *name, char **_environ);

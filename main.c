@@ -54,13 +54,13 @@ void set_data(data_shell *datash, char **agv)
  * @agv: argument vector
  * Return: 0 on success.
  */
-int main(int ac, char **av)
+int main(int agc, char **agv)
 {
 	data_shell datash;
-	(void) ac;
+	(void) agc;
 
 	signal(SIGINT, get_sigint);
-	set_data(&datash, av);
+	set_data(&datash, agv);
 	shell_loop(&datash);
 	free_data(&datash);
 	if (datash.status < 0)

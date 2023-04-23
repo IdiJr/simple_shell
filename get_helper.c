@@ -5,7 +5,7 @@
  * @datash: data structure for agc and input
  * Return: 0 on success
 */
-int get_help(data_shell *datash)
+int get_helper(data_shell *datash)
 {
 
 	if (datash->agc[1] == 0)
