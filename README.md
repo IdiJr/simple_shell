@@ -154,23 +154,23 @@ $ echo "echo 'hello' ; echo 'world'" | ./hsh
 `command1 && command2`: `command2` is executed if, and only if, `command1` returns an exit status of zero.
 
 Example:
-`
+```
 $ echo "error! && echo 'Cisfun'" | ./hsh
 ./shellby: 1: error!: not found
 $ echo "echo 'Great Tower of' && echo 'Babel'" | ./hsh
 'Great Tower of'
 'Babel'
-`
+```
 
 #### || - OR logical operator
 `command1 || command2`: `command2` is executed if, and only if, `command1` returns a non-zero exit status.
 
 Example:
-`
+```
 $ echo "error! || echo 'Reverbs'" | ./hsh
 ./hsh: 1: error!: not found
 'Reverbs'
-`
+```
 
 The operators `&&` and `||` have equal precedence, followed by `;`.
 
@@ -185,7 +185,7 @@ The operators `&&` and `||` have equal precedence, followed by `;`.
   * The environment variables `PWD` and `OLDPWD` are updated after a change of directory.
 
 Example:
-`
+```
 $ ./hsh
 $ pwd
 /root/simple_shell
@@ -195,7 +195,7 @@ $ pwd
 $ cd -
 $ pwd
 /root/simple_shell
-`
+```
 
 #### exit
   * Usage: `exit [STATUS]`
@@ -204,10 +204,10 @@ $ pwd
   * If no argument is given, the command is interpreted as `exit 0`.
 
 Example:
-`
+```
 $ ./hsh
 $ exit
-`
+```
 The shell closes after the exit command was executed.
 
 #### env
@@ -215,7 +215,7 @@ The shell closes after the exit command was executed.
   * Prints the current environment.
 
 Example:
-`
+```
 $ ./hsh
 $ env
 SHELL=/bin/bash
@@ -223,7 +223,7 @@ WSL_DISTRO_NAME=Ubuntu-20.04
 NAME=JRs
 PWD=/root/simple_shell
 ...
-`
+```
 
 #### setenv
   * Usage: `setenv [VARIABLE] [VALUE]`
@@ -231,12 +231,12 @@ PWD=/root/simple_shell
   * Upon failure, prints a message to `stderr`.
 
 Example:
-`
+```
 $ ./hsh
 $ setenv NAME Luropichka
 $ echo $NAME
 Luropichka
-`
+```
 
 #### unsetenv
   * Usage: `unsetenv [VARIABLE]`
@@ -244,14 +244,14 @@ Luropichka
   * Upon failure, prints a message to `stderr`.
 
 Example:
-`
+```
 $ ./hsh
 $ setenv NAME Luropichka
 $ unsetenv NAME
 $ echo $NAME
 
 $
-`
+```
 
 ## Authors & Copyrights
 
