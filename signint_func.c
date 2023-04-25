@@ -8,4 +8,5 @@ void get_sigint(int sig)
 {
 	(void)sig;
 	write(STDOUT_FILENO, "\n$ ", 2);
+	exit(EXIT_SUCCESS);
 }

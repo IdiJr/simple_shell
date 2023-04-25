@@ -89,13 +89,14 @@ If a command is not found, the return status is 127; if a command is found but i
 All builtins return zero on success and one or two on incorrect usage (indicated by a corresponding error message).
 
 ### Signals
-**hsh** ignores the keyboard input ctrl+c in the interactive mode. End-Of-File ctrl+d will exit the program.
+When the keyboard ctrl+c is input in the interactive mode, **hsh** is exited and also, End-Of-File ctrl+d will exit the program.
 
-User hits ctrl+c in the first command, and ctrl+d in the foutrh command.
+User hits ctrl+c in the second command and ctrl+d in the fourth command.
 ```
-$ ./hsh
+$ ~/simple_shell# ./hsh
 $ ^C
-$ 
+$ ~/simple_shell# ./hsh
+$ ~/simple_shell# 
 ```
 
 ### Variable Replacement
