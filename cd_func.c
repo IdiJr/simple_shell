@@ -2,9 +2,7 @@
 
 /**
  * cd_dot - changes directory to the parent directory
- *
  * @datash: data relevant (environ)
- *
  * Return: no return
  */
 void cd_dot(data_shell *datash)
@@ -54,7 +52,6 @@ void cd_dot(data_shell *datash)
 /**
  * cd_to - changes directory to a directory given
  * by the user
- *
  * @datash: data relevant (directories)
  * Return: no return
  */
@@ -88,7 +85,6 @@ void cd_to(data_shell *datash)
 
 /**
  * cd_previous - changes directory to the previous directory
- *
  * @datash: data relevant (environ)
  * Return: no return
  */
@@ -130,7 +126,6 @@ void cd_previous(data_shell *datash)
 
 /**
  * cd_to_home - changes directory to home directory
- *
  * @datash: data for relevant (environ)
  * Return: no return
  */
