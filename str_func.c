@@ -8,8 +8,7 @@
  */
 char *_strcat(char *dest, const char *src)
 {
-	int i;
-	int j;
+	int i, j;
 
 	for (i = 0; dest[i] != '\0'; i++)
 		;
@@ -32,13 +31,13 @@ char *_strcat(char *dest, const char *src)
 char *_strcpy(char *dest, char *src)
 {
 
-	size_t a;
+	size_t b;
 
-	for (a = 0; src[a] != '\0'; a++)
+	for (b = 0; src[b] != '\0'; b++)
 	{
-		dest[a] = src[a];
+		dest[b] = src[b];
 	}
-	dest[a] = '\0';
+	dest[b] = '\0';
 
 	return (dest);
 }
@@ -79,10 +78,10 @@ char *_strchr(char *s, char c)
 	return ('\0');
 }
 /**
- * _strspn - get the length of a prefix substring.
- * @s: initial segment.
+ * _strspn - get the length of the prefix substring.
+ * @s: segment.
  * @accept: accepted bytes.
- * Return: the number of accepted bytes.
+ * Return: the number of the accepted bytes.
  */
 int _strspn(char *s, char *accept)
 {
