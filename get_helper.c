@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * get_help - calls help messages from builtin
+ * get_helper - calls help messages from builtin
  * @datash: data structure for agc and input
  * Return: 0 on success
 */
