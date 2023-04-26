@@ -8,8 +8,8 @@
  */
 int cd_shell(data_shell *datash)
 {
-	char *dir;
 	int isshome, isshome2, issddash;
+	char *dir;
 
 	dir = datash->agc[1];
 
