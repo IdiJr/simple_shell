@@ -11,14 +11,15 @@
  */
 int cmp_env_name(const char *nenv, const char *name)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; nenv[i] != '='; i++)
+	while (nenv[i] != '=')
 	{
 		if (nenv[i] != name[i])
 		{
 			return (0);
 		}
+		i++;
 	}
 
 	return (i + 1);
@@ -34,25 +35,23 @@ int cmp_env_name(const char *nenv, const char *name)
 char *_getenv(const char *name, char **_environ)
 {
 	char *ptr_env;
-	int i, mov;
+	int i = 0, j;
 
-	/* Initialize ptr_env value to NULL and mov to 0 */
 	ptr_env = NULL;
-	mov = 0;
+	j = 0;
 
-	/* Loops through _environ until we reach the end of the array */
-	for (i = 0; _environ[i]; i++)
+	while (_environ[i])
 	{
-	/* compare the name of the current environment variable with the given name */
-		mov = cmp_env_name(_environ[i], name);
-		if (mov)
+		j = cmp_env_name(_environ[i], name);
+		if (j)
 		{
 			ptr_env = _environ[i];
 			break;
 		}
+		i++;
 	}
 
-	return (ptr_env + mov);
+	return (ptr_env + j);
 }
 
 /**
@@ -63,16 +62,18 @@ char *_getenv(const char *name, char **_environ)
  */
 int _env(data_shell *datash)
 {
-	int i, j;
+	int i = 0, j;
 
-	for (i = 0; datash->_environ[i]; i++)
+	while (datash->_environ[i])
 	{
-
-		for (j = 0; datash->_environ[i][j]; j++)
-			;
-
+		j = 0;
+		while (datash->_environ[i][j])
+		{
+			j++;
+		}
 		write(STDOUT_FILENO, datash->_environ[i], j);
 		write(STDOUT_FILENO, "\n", 1);
+		i++;
 	}
 	datash->status = 0;
 

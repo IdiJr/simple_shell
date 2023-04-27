@@ -2,7 +2,7 @@
 
 /**
  * help_env - Calls help information for the builtin env
- * Return: no return
+ * Return: void
  */
 void help_env(void)
 {
@@ -15,7 +15,7 @@ void help_env(void)
 }
 /**
  * help_setenv - Calls help information for the builtin setenv
- * Return: no return
+ * Return: void
  */
 void help_setenv(void)
 {

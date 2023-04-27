@@ -11,7 +11,7 @@
  */
 char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str)
 {
-	char *illegal_flag;
+	char *i_flag;
 
 	_strcpy(error, datash->agv[0]);
 	_strcat(error, ": ");
@@ -21,12 +21,12 @@ char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str)
 	_strcat(error, msg);
 	if (datash->agc[1][0] == '-')
 	{
-		illegal_flag = malloc(3);
-		illegal_flag[0] = '-';
-		illegal_flag[1] = datash->agc[1][1];
-		illegal_flag[2] = '\0';
-		_strcat(error, illegal_flag);
-		free(illegal_flag);
+		i_flag = malloc(3);
+		i_flag[0] = '-';
+		i_flag[1] = datash->agc[1][1];
+		i_flag[2] = '\0';
+		_strcat(error, i_flag);
+		free(i_flag);
 	}
 	else
 	{

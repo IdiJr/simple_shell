@@ -28,7 +28,7 @@ void help_alias(void)
 }
 /**
  * help_cd - Calls help information for the builtin cd.
- * Return: no return
+ * Return: void
  */
 void help_cd(void)
 {
